@@ -162,11 +162,17 @@ pre code {
   align-items: center;
   justify-content: center;
   min-height: 20em;
-  padding: 3rem 1rem;
+  padding: 3em 1em;
   background-color: #001E3F;
   color: rgba(255,255,255,.5);
   text-align: center;
 }
+
+.masthead--page {
+  min-height: auto;
+  padding: 2em 1em;
+}
+
 .masthead h1 {
   color: #fff;
   margin-bottom: .25rem;
