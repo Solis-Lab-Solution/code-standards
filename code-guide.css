@@ -22,7 +22,7 @@ body {
 }
 
 a {
-  color: #08c;
+  color: #001E3F;
   text-decoration: none;
 }
 a:hover {
@@ -177,27 +177,19 @@ pre code {
   color: #fff;
   margin-bottom: .25rem;
 }
-.masthead .icon {
-  display: inline-block;
-  font-size: 3rem;
-  margin: 0 .5rem;
-}
-.masthead-links {
-  font-size: 2rem;
-}
-.masthead-links a {
-  color: rgba(255,255,255,.5);
-  text-decoration: none;
-  transition: all .15s linear;
-}
-.masthead-links a:hover {
-  color: #fff;
+
+.masthead--page h1 {
+  margin-bottom: 0;
 }
 
 @media (min-width: 38em) {
   .masthead {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+  .masthead--page {
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 }
 
@@ -258,9 +250,14 @@ Breadcrumb
 
 .breadcrumb__link {
   display: block;
-  color: #666;
-  font-weight: 700;
+  font-weight: 400;
 }
+
+.breadcrumb__link:hover {
+  text-decoration: none;
+  color: #001E3F;
+}
+
 
 /*
  * Syntax highlighting
