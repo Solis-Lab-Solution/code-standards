@@ -1,9 +1,27 @@
-// Without nesting
-.table > thead > tr > th { … }
-.table > thead > tr > td { … }
+/*
+Keep the code clean with BEM
+Avoid nesting if needed until it must be
+The BAD example is below
+*/
 
-// With nesting
-.table > thead > tr {
-  > th { … }
-  > td { … }
+.header__menu {
+  .menu-item {
+    a {
+      color: $c-blue;
+      &:hover {
+        color: $c-black;
+      }
+    }
+  }
+}
+
+/* Optimization for BETTER code */
+
+.header__menu {}
+.header__menu-item {}
+.header__menu-link {
+  color: $c-blue;
+  &:hover {
+    color: $c-black;
+  }
 }

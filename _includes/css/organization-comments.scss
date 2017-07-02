@@ -1,0 +1,19 @@
+/* Add from top parent to child */
+.hero {
+    /* Keep other component (like social-links) below if they are under this hero with other style */
+    .social-links {}
+    /* BAD is below. Don't nesting because .hero--home can override .hero without adding it inside */
+    &.hero--home {}
+}
+
+/* Keep extend class below, don't add it inside .hero class */
+.hero--home {
+    /* Then add any child element needs override */
+    .hero__headline {}
+    .hero__button {}
+}
+
+.hero__container {}
+.hero__headline {}
+.hero__list {}
+.hero__button {}

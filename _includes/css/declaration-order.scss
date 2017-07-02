@@ -1,4 +1,9 @@
-.declaration-order {
+. {
+  /* Keep extends and mixins in the top */
+  @extend .section;
+  @include transition;
+  /* Then declarations */
+
   /* Positioning */
   position: absolute;
   top: 0;
@@ -8,8 +13,7 @@
   z-index: 100;
 
   /* Box-model */
-  display: block;
-  float: right;
+  display: flex;
   width: 100px;
   height: 100px;
 

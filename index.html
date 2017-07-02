@@ -2,47 +2,6 @@
 layout: default
 ---
 
-
-<div class="heading" id="toc">
-  <h2>Table of contents</h2>
-</div>
-<div class="section toc">
-  <div class="col">
-    <h4><a href="#html">HTML</a></h4>
-    <ul>
-      <li><a href="#html-syntax">Syntax</a></li>
-      <li><a href="#html-doctype">HTML5 doctype</a></li>
-      <li><a href="#html-lang">Language attribute</a></li>
-      <li><a href="#html-encoding">Character encoding</a></li>
-      <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
-      <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
-      <li><a href="#html-practicality">Practicality over purity</a></li>
-      <li><a href="#html-attribute-order">Attribute order</a></li>
-      <li><a href="#html-boolean-attributes">Boolean attributes</a></li>
-      <li><a href="#html-reducing-markup">Reducing markup</a></li>
-      <li><a href="#html-javascript">JavaScript generated markup</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    <h4><a href="#css">CSS</a></h4>
-    <ul>
-      <li><a href="#css-syntax">CSS syntax</a></li>
-      <li><a href="#css-declaration-order">Declaration order</a></li>
-      <li><a href="#css-import">Don't use @import</a></li>
-      <li><a href="#css-media-queries">Media query placement</a></li>
-      <li><a href="#css-prefixed-properties">Prefixed properties</a></li>
-      <li><a href="#css-single-declarations">Rules with single declarations</a></li>
-      <li><a href="#css-shorthand">Shorthand notation</a></li>
-      <li><a href="#css-nesting">Nesting in Less and Sass</a></li>
-      <li><a href="#css-operators">Operators in Less and Sass</a></li>
-      <li><a href="#css-comments">Comments</a></li>
-      <li><a href="#css-classes">Classes</a></li>
-      <li><a href="#css-selectors">Selectors</a></li>
-      <li><a href="#css-organization">Organization</a></li>
-    </ul>
-  </div>
-</div>
-
 <div class="heading" id="html">
   <h2>HTML</h2>
 </div>
@@ -173,12 +132,14 @@ layout: default
     <h3>Declaration order</h3>
     <p>Related property declarations should be grouped together following the order:</p>
     <ol>
+      <li>Extends and mixin</li>
       <li>Positioning</li>
       <li>Box model</li>
       <li>Typographic</li>
       <li>Visual</li>
     </ol>
-    <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
+    <p>Extends and mixins should be add first cause it keep us understand what they override.</p>
+    <p>Positioning comes second because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
     <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
     <p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.</p>
   </div>
@@ -324,7 +285,7 @@ layout: default
     </ul>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+    {% highlight css %}{% include css/organization-comments.scss %}{% endhighlight %}
   </div>
 </div>
 
