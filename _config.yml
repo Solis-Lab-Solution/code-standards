@@ -1,0 +1,7 @@
+name:          Code Guide by @solislab
+description:   Standards for developing flexible, durable, and sustainable HTML and CSS.
+url:           https://solis-lab-solution.github.io/code-standards
+
+markdown:      rdiscount
+permalink:     pretty
+pygments:      true
