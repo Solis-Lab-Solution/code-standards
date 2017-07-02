@@ -156,6 +156,18 @@ layout: default
   </div>
 </div>
 
+<div class="section" id="define-before-using">
+  <div class="col">
+    <h3>Define global values before using</h3>
+    <p>You should look into <code>_variable.scss</code> to find any global variable like color, font, breakpoints, etc...</p>
+    <p>The file <code>_typography.scss</code> always include pre-defined typography for Heading, text</p>
+    <p>The file <code>_button.scss</code> should have pre-defined button styling.</p>
+  </div>
+  <div class="col">
+    {% highlight css %}{% include css/define.scss %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="css-declaration-order">
   <div class="col">
     <h3>Declaration order</h3>
@@ -181,7 +193,7 @@ layout: default
     <p>Place media queries inside each class. Keep mobile-first: define in mobile, then in large screens.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+    {% highlight css %}{% include css/media-queries.scss %}{% endhighlight %}
   </div>
 </div>
 
@@ -202,7 +214,7 @@ layout: default
     <p>If it extends multiple declarations, add each of them in single row.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
+    {% highlight css %}{% include css/single-declarations.scss %}{% endhighlight %}
   </div>
 </div>
 

@@ -1,0 +1,11 @@
+/*
+Looking for existing .h1 class from _typography.scss
+Looking for existing color $c-blue from _variables.scss
+Looking for existing mixin transition from _utils.scss
+ */
+
+.hero__headline {
+  @extend. h1;
+  @include transition; // or @include transition(all)
+  color: $c-blue;
+}
