@@ -188,7 +188,7 @@ layout: default
 <div class="section" id="css-prefixed-properties">
   <div class="col">
     <h3>Prefixed properties</h3>
-    <p>You don't need to insert prefix for other web browsers. Ou workflow always include the way to add prefix after compiling.</p>
+    <p>You don't need to insert prefix for other web browsers. Our workflow always include the way to add prefix after compiling.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
@@ -198,8 +198,8 @@ layout: default
 <div class="section" id="css-single-declarations">
   <div class="col">
     <h3>Single declarations</h3>
-    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
-    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+    <p>If it extends only one declaration, keep it shorten in same row with class name.</p>
+    <p>If it extends multiple declarations, add each of them in single row.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
@@ -210,15 +210,17 @@ layout: default
   <div class="col">
     <h3>Shorthand notation</h3>
     <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
+    <p>Don't define only 1 value (like <code>10px</code>) for <code>margin</code> and <code>padding</code>. Using at least two values (like <code>margin: 0 10px;</code>)</p>
     <ul>
-      <li><code>padding</code></li>
       <li><code>margin</code></li>
+      <li><code>padding</code></li>
       <li><code>font</code></li>
       <li><code>background</code></li>
       <li><code>border</code></li>
       <li><code>border-radius</code></li>
     </ul>
-    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
+    <h4>Override</h4>
+    <p>In mobile, you define <code>margin: 0 auto</code>, so in large screen, you need to override <code>margin-top</code> only. Don't use `<code>margin</code>. Use <code>margin-top</code> is better way.</p>
     <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
   </div>
   <div class="col">

@@ -1,5 +1,5 @@
 .hero__item {
-  @xtend .headline;
+  @extend .headline;
   width: 100%;
   /*
     Keep to use @media inside class in SCSS

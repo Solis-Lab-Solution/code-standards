@@ -1,16 +1,23 @@
-/* Bad example */
-.element {
-  margin: 0 0 10px;
-  background: red;
-  background: url("image.jpg");
-  border-radius: 3px 3px 0 0;
-}
-
 /* Good example */
 .element {
-  margin-bottom: 10px;
-  background-color: red;
-  background-image: url("image.jpg");
+  /*
+  Using at least two values for margin and padding
+  BAD is margin: 10px; (while not need 10px for left and right)
+ */
+  margin: 0 auto;
+  /*
+  If not need set padding for left, right and top, don't use padding
+  BAD is padding: 0 0 10px 0;
+   */
+  padding-bottom: 10px;
+  /*
+  Using background-image than background
+  BAD is background: url('image.jpg');
+   */
+  background-image: url('image.jpg');
+  /*
+  If border-radius has 4 values while you define two only, avoid using border-radius
+   */
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
