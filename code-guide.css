@@ -180,6 +180,7 @@ pre code {
 
 .masthead--page h1 {
   margin-bottom: 0;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 38em) {
@@ -252,12 +253,6 @@ Breadcrumb
   display: block;
   font-weight: 400;
 }
-
-.breadcrumb__link:hover {
-  text-decoration: none;
-  color: #001E3F;
-}
-
 
 /*
  * Syntax highlighting
