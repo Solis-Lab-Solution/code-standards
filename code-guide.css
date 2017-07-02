@@ -243,6 +243,24 @@ pre code {
   display: inline;
 }
 
+/*
+Breadcrumb
+ */
+
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background: #eee;
+}
+
+.breadcrumb__link {
+  display: block;
+  color: #666;
+  font-weight: 700;
+}
 
 /*
  * Syntax highlighting
