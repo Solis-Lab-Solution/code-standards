@@ -1,0 +1,21 @@
+/* Bad example */
+span { ... }
+.menu-item a {}
+.page-container #stream .stream-item .tweet .tweet-header .username { ... }
+.avatar { ... }
+
+/* Good example
+Using BEM class
+*/
+.hero__headline {}
+.hero__button {}
+.hero__link {}
+
+/* Extends parent class if need override */
+.hero__headline {
+    @extend .h2;
+    /* If body class contains home */
+    .home & {
+        @extend .h2-home;
+    }
+}
