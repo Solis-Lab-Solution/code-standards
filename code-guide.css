@@ -158,10 +158,14 @@ pre code {
  */
 
 .masthead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20em;
   padding: 3rem 1rem;
+  background-color: #001E3F;
   color: rgba(255,255,255,.5);
   text-align: center;
-  background-color: #2a3440;
 }
 .masthead h1 {
   color: #fff;
