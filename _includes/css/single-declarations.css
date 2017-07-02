@@ -10,7 +10,7 @@
 .button--red { background-color: red; }
 .button--blue { background-color: blue; }
 
-/* But keep multiple lines if it is not extend any existing class */
+/* But keep multiple lines if it extends more than one declaration */
 
 .button-outline {
   @extend .button;
