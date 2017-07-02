@@ -66,87 +66,18 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="html-doctype">
-  <div class="col">
-    <h3>HTML5 doctype</h3>
-    <p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-lang">
-  <div class="col">
-    <h3>Language attribute</h3>
-    <p>From the HTML5 spec:</p>
-    <blockquote>
-      <p>Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.</p>
-    </blockquote>
-    <p>Read more about the <code>lang</code> attribute <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in the spec</a>.</p>
-    <p>Head to Sitepoint for a <a href="http://reference.sitepoint.com/html/lang-codes">list of language codes</a>.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/lang.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-ie-compatibility-mode">
-  <div class="col">
-    <h3>IE compatibility mode</h3>
-    <p>Internet Explorer supports the use of a document compatibility <code>&lt;meta&gt;</code> tag to specify what version of IE the page should be rendered as. Unless circumstances require otherwise, it's most useful to instruct IE to use the latest supported mode with <strong>edge mode</strong>.</p>
-    <p>For more information, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">read this awesome Stack Overflow article</a>.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-encoding">
-  <div class="col">
-    <h3>Character encoding</h3>
-    <p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding. When doing so, you may avoid using character entities in your HTML, provided their encoding matches that of the document (generally UTF-8).</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-style-script">
-  <div class="col">
-    <h3>CSS and JavaScript includes</h3>
-    <p>Per HTML5 spec, typically there is no need to specify a <code>type</code> when including CSS and JavaScript files as <code>text/css</code> and <code>text/javascript</code> are their respective defaults.</p>
-    <h4>HTML5 spec links</h4>
-    <ul>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Using link</a></li>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Using style</a></li>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Using script</a></li>
-    </ul>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/style-script.html %}{% endhighlight %}
-  </div>
-</div>
-
-<div class="section" id="html-practicality">
-  <div class="col">
-    <h3>Practicality over purity</h3>
-    <p>Strive to maintain HTML standards and semantics, but not at the expense of practicality. Use the least amount of markup with the fewest intricacies whenever possible.</p>
-  </div>
-</div>
-
 <div class="section" id="html-attribute-order">
   <div class="col">
     <h3>Attribute order</h3>
     <p>HTML attributes should come in this particular order for easier reading of code.</p>
-    <ul>
+    <ol>
       <li><code>class</code></li>
       <li><code>id</code>, <code>name</code></li>
       <li><code>data-*</code></li>
       <li><code>src</code>, <code>for</code>, <code>type</code>, <code>href</code>, <code>value</code></li>
       <li><code>title</code>, <code>alt</code></li>
       <li><code>role</code>, <code>aria-*</code></li>
-    </ul>
+    </ol>
     <p>Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
   </div>
   <div class="col">
@@ -175,8 +106,8 @@ layout: default
 
 <div class="section" id="html-reducing-markup">
   <div class="col">
-    <h3>Reducing markup</h3>
-    <p>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:</p>
+    <h3>BEM markup</h3>
+    <p>To avoid nesting classes, the mixin between global class and BEM (Block Element Modifier) is highly recommend.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
@@ -189,8 +120,6 @@ layout: default
     <p>Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.</p>
   </div>
 </div>
-
-
 
 <div class="heading" id="css">
   <h2>CSS</h2>

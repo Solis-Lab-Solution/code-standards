@@ -1,7 +1,17 @@
-<!-- Not so great -->
-<span class="avatar">
-  <img src="...">
-</span>
-
-<!-- Better -->
-<img class="avatar" src="...">
+<section class="hero">
+  <!--It lets us know we have a global .container class-->
+  <div class="container hero__container">
+    <h2 class="hero__headline">This is a Headline</h2>
+    <ul class="hero__list">
+      <!--DO NOT create .hero__list-item-->
+      <li class="hero__item">This is a single item</li>
+    </ul>
+    <div class="hero__block">
+      <!--DO NOT create .hero__block-button-->
+      <!--It defines a first button via class .hero__button&#45;&#45;first, extend color, background or something from .hero__button-->
+      <a href="#" class="button hero__button hero__button--first">Learn More</a>
+      <!--It has a global button style using  .button, but also extend fom .hero__button-->
+      <a href="#" class="button hero__button hero__button--second">View order</a>
+    </div>
+  </div>
+</section>
