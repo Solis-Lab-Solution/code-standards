@@ -1,0 +1,217 @@
+---
+layout: default
+---
+
+<div class="heading" id="css">
+    <h2>SCSS</h2>
+</div>
+<div class="section" id="css-syntax">
+    <div class="col">
+        <h3>Syntax</h3>
+        <h4>Tab Indent</h4>
+        <ul>
+            <li>Use soft tabs with four spaces, following WordPress .editorconfig</li>
+        </ul>
+        <ul>
+            <li>When grouping selectors, keep individual selectors to a single line.</li>
+            <li>Include one space before the opening brace of declaration blocks for legibility.</li>
+            <li>Place closing braces of declaration blocks on a new line.</li>
+            <li>Include one space after <code>:</code> for each declaration.</li>
+            <li>Each declaration should appear on its own line for more accurate error reporting.</li>
+            <li>End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.</li>
+            <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
+            <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).</li>
+            <li>Don't prefix property values or color parameters with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code> and <code>-.5px</code> instead of <code>-0.5px</code>).</li>
+            <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
+            <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
+            <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
+            <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="define-before-using">
+    <div class="col">
+        <h3>Define global values before using</h3>
+        <p>You should look into <code>_variable.scss</code> to find any global variable like color, font, breakpoints, etc...</p>
+        <p>The file <code>_typography.scss</code> always include pre-defined typography for Heading, text</p>
+        <p>The file <code>_button.scss</code> should have pre-defined button styling.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/define.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-declaration-order">
+    <div class="col">
+        <h3>Declaration order</h3>
+        <p>Related property declarations should be grouped together following the order:</p>
+        <ol>
+            <li>Extends and mixin</li>
+            <li>Positioning</li>
+            <li>Box model</li>
+            <li>Typographic</li>
+            <li>Visual</li>
+        </ol>
+        <p>Extends and mixins should be add first cause it keep us understand what they override.</p>
+        <p>Positioning comes second because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
+        <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
+        <p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/declaration-order.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-media-queries">
+    <div class="col">
+        <h3>Media query</h3>
+        <p>Place media queries inside each class. Keep mobile-first: define in mobile, then in large screens.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/media-queries.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-prefixed-properties">
+    <div class="col">
+        <h3>Prefixed properties</h3>
+        <p>You don't need to insert prefix for other web browsers. Our workflow always include the way to add prefix after compiling.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-single-declarations">
+    <div class="col">
+        <h3>Single declarations</h3>
+        <p>If it extends only one declaration, keep it shorten in same row with class name.</p>
+        <p>If it extends multiple declarations, add each of them in single row.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/single-declarations.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-shorthand">
+    <div class="col">
+        <h3>Shorthand notation</h3>
+        <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
+        <p>Don't define only 1 value (like <code>10px</code>) for <code>margin</code> and <code>padding</code>. Using at least two values (like <code>margin: 0 10px;</code>)</p>
+        <ul>
+            <li><code>margin</code></li>
+            <li><code>padding</code></li>
+            <li><code>font</code></li>
+            <li><code>background</code></li>
+            <li><code>border</code></li>
+            <li><code>border-radius</code></li>
+        </ul>
+        <h4>Override</h4>
+        <p>In mobile, you define <code>margin: 0 auto</code>, so in large screen, you need to override <code>margin-top</code> only. Don't use `<code>margin</code>. Use <code>margin-top</code> is better way.</p>
+        <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-nesting">
+    <div class="col">
+        <h3>Nesting in Less and Sass</h3>
+        <p>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.</p>
+        <p>Additional reading:</p>
+        <ul>
+            <li><a href="http://markdotto.com/2015/07/20/css-nesting/">Nesting in Sass and Less</a></li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-operators">
+    <div class="col">
+        <h3>Operators in Less and Sass</h3>
+        <p>For improved readability, wrap all math operations in parentheses with a single space between values, variables, and operators.</p>
+    </div>
+    <div class="col">
+        {% highlight scss %}{% include css/operators.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-comments">
+    <div class="col">
+        <h3>Comments</h3>
+        <p>Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
+        <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-classes">
+    <div class="col">
+        <h3>Class names</h3>
+        <ul>
+            <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn-danger</code>).</li>
+            <li>Avoid excessive and arbitrary shorthand notation. <code>.button</code> is useful for <em>button</em>, but <code>.s</code> doesn't mean anything.</li>
+            <li>Keep classes as short and succinct as possible.</li>
+            <li>Use meaningful names; use structural or purposeful names over presentational.</li>
+            <li>Prefix classes based on the closest parent or base class.</li>
+            <li>Use <code>.js-*</code> classes to denote behavior (as opposed to style), but keep these classes out of your CSS.</li>
+        </ul>
+        <p>It's also useful to apply many of these same rules when creating Sass and Less variable names.</p>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-selectors">
+    <div class="col">
+        <h3>Selectors</h3>
+        <ul>
+            <li>Use classes over generic element tag for optimum rendering performance.</li>
+            <li>Avoid using several attribute selectors (e.g., <code>[class^="..."]</code>) on commonly occuring components. Browser performance is known to be impacted by these.</li>
+            <li>Keep selectors short and strive to limit the number of elements in each selector to three.</li>
+            <li>Scope classes to the closest parent <strong>only</strong> when necessary (e.g., when not using prefixed classes).</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/selectors.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-organization">
+    <div class="col">
+        <h3>Organization</h3>
+        <ul>
+            <li>Organize sections of code by component.</li>
+            <li>Develop a consistent commenting hierarchy.</li>
+            <li>Use consistent white space to your advantage when separating sections of code for scanning larger documents.</li>
+            <li>When using multiple CSS files, break them down by component instead of page. Pages can be rearranged and components moved.</li>
+        </ul>
+    </div>
+    <div class="col">
+        {% highlight css %}{% include css/organization-comments.scss %}{% endhighlight %}
+    </div>
+</div>
+
+<div class="section" id="css-editor-prefs">
+    <div class="col">
+        <h3>Editor preferences</h3>
+        <p>Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:</p>
+        <ul>
+            <li>Use soft-tabs set to two spaces. Especially SCSS set to 4 spaces.</li>
+            <li>Trim trailing white space on save.</li>
+            <li>Set encoding to UTF-8.</li>
+            <li>Add new line at end of files.</li>
+        </ul>
+        <p>Consider documenting and applying these preferences to your project's <code>.editorconfig</code> file. For an example, see <a href="https://core.trac.wordpress.org/browser/trunk/.editorconfig">the one in WordPress</a>. Learn more <a href="http://editorconfig.org">about EditorConfig</a>.</p>
+    </div>
+</div>
