@@ -4,4 +4,4 @@ url:           https://solis-lab-solution.github.io/code-standards
 
 markdown:      rdiscount
 permalink:     pretty
-pygments:      true
+highlighter:   rouge
